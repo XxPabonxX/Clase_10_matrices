@@ -1,0 +1,97 @@
+int leer_radios(float rac[][20]);
+void conversiones(float radio, float& area, float& cir);
+void asignar(float rac[][20], int num_rac);
+void imprimir(float rac[][20], int num_rac);
+void llenar_mat(int m[][100], int f, int c);
+void imprimir_mat(int m[][100], int f, int c);
+
+//funcion 1: Leer y asignar radios
+
+int leer_radios(float rac[][20]) {
+
+    int num_rad = 0;
+
+    cout << "Cuantos radios quiere ingresar: ";
+    cin >> num_rad;
+
+    system("cls");
+
+    for (int i = 0; i < num_rad; i++)
+    {
+        cout << "Radios quiere ingresar en la posicion [" << i + 1 << "]: ";
+        cin >> rac[0][i];
+        cout << endl;
+    }
+
+    return num_rad;
+}
+
+//funcion 2
+
+void conversiones(float radio, float& area, float& cir) {
+
+    area = 3.1416 * pow(radio, 2);
+    cir = 2 * 3.1416 * radio;
+
+}
+
+//funcion 3
+
+void asignar(float rac[][20], int num_rac) {
+
+
+    for (int i = 0; i < num_rac; i++)
+    {
+        conversiones(rac[0][i], rac[1][i], rac[2][i]);
+
+    }
+
+}
+
+//funcion 4
+
+void imprimir(float rac[][20], int num_rac) {
+
+    for (int i = 0; i < num_rac; i++)
+    {
+        cout << "Para el radio [" << i + 1 << "]" << endl;
+        cout << "Radio: " << rac[0][i] << endl;
+        cout << "Area: " << rac[1][i] << endl;
+        cout << "Circunferencia: " << rac[2][i] << endl << endl;
+    }
+
+}
+
+//funcion 5
+
+void llenar_mat(int m[][100], int f, int c) {
+
+    cout << "Inicio de llenado de matriz" << endl << endl;
+
+    for (int i = 0; i < f; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            cout << "[" << i + 1 << "]" << "[" << j + 1 << "]: ";
+            cin >> m[i][j];
+        }
+    }
+
+}
+
+//funcion 6
+
+void imprimir_mat(int m[][100], int f, int c) {
+
+    cout << "Inicio de impresion de la matriz de matriz" << endl << endl;
+
+    for (int i = 0; i < f; i++)
+    {
+        for (int j = 0; j < c; j++)
+        {
+            cout << setw(4) << m[i][j];
+        }
+        cout << endl;
+    }
+
+}
